@@ -28,17 +28,37 @@
           <img class="w-[120px]" src="./assets/Logo.png" alt="" />
         </div>
         <div class="Sort">
-          <button class="btn">Sort By View</button>
+          <label class="input">
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input id="search-input" type="search" required placeholder="Search" />
+          </label>
         </div>
         <div class="blogs">
-          <button class="btn bg-[#FF1F3D] text-white">Blogs</button>
+          <button class="btn bg-[#FF1F3D] text-white">Sort by View</button>
         </div>
       </nav>
     </header>
 
     <nav id="category-container" class="flex py-5 justify-center gap-5">
       <div>
-        <button id="btn-all" onclick="loadVideos()" class="btn btn-sm">All</button>
+        <button id="btn-all" onclick="loadVideos()" class="btn btn-sm">
+          All
+        </button>
       </div>
     </nav>
 
@@ -55,6 +75,21 @@
         </h2>
       </div>
     </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    <dialog id="video_details" class="modal">
+      <div class="modal-box">
+        <div id="details-container"></div>
+
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
 
     <script src="script/index.js"></script>
   </body>
