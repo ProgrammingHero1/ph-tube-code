@@ -31,51 +31,19 @@
 
     <nav id="category-container" class="flex py-5 justify-center gap-5">
       <div>
-        <button class="btn btn-sm bg-[#FF1F3D] text-white">All</button>
+        <button
+          onclick="loadVideos()"
+          class="btn btn-sm bg-[#FF1F3D] text-white"
+        >
+          All
+        </button>
       </div>
     </nav>
 
     <section
       class="w-11/12 mx-auto grid grid-cols-4 gap-5"
       id="video-container"
-    >
-      <div class="card bg-base-100">
-        <figure class="relative">
-          <img src="https://i.ibb.co/QPNzYVy/moonlight.jpg" alt="Shoes" />
-          <span
-            class="absolute bottom-2 right-2 text-sm rounded text-white bg-black px-2"
-            >3hrs 56 min ago</span
-          >
-        </figure>
-
-        <div class="flex gap-3 px-0 py-5">
-          <div class="profile">
-            <div class="avatar">
-              <div
-                class="ring-primary ring-offset-base-100 w-6 rounded-full ring ring-offset-2"
-              >
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="intro">
-            <h2 class="text-sm font-semibold">Midnight Serenade</h2>
-            <p class="text-sm text-gray-400 flex gap-1">
-              Awlad Hossain
-              <img
-                class="w-5 h-5"
-                src="https://img.icons8.com/?size=96&id=98A4yZTt9abw&format=png"
-                alt=""
-              />
-            </p>
-            <p class="text-sm text-gray-400">91K views</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    ></section>
 
     <script src="script/index.js"></script>
   </body>
