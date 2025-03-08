@@ -1,4 +1,10 @@
 console.log("index is connected");
+function removeActiveClass() {
+  const activeButtons = document.getElementsByClassName("active");
+  for (let btn of activeButtons) {
+    btn.classList.remove("active");
+  }
+}
 
 function loadCategories() {
   // 1- fetch the data
@@ -12,9 +18,13 @@ function loadCategories() {
 function loadVideos() {
   fetch("https://openapi.programming-hero.com/api/phero-tube/videos")
     .then((response) => response.json())
-    .then((data) => displayVideos(data.videos));
+    .then((data) => {
+      removeActiveClass();
+      document.getElementById("btn-all").classList.add("active");
+      displayVideos(data.videos);
+    });
 }
-
+//1001
 const loadCategoryVideos = (id) => {
   const url = `https://openapi.programming-hero.com/api/phero-tube/category/${id}`;
   console.log(url);
@@ -22,9 +32,12 @@ const loadCategoryVideos = (id) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
+      removeActiveClass();
+      //no active class
+
       const clickedButton = document.getElementById(`btn-${id}`);
       clickedButton.classList.add("active");
-      console.log(clickedButton);
+
       displayVideos(data.category);
     });
 };
